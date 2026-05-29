@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API_Class_FuelManager.Models
 {
+    [Table("Veiculos")]
     public class Veiculo
     {
         [Key]
@@ -14,6 +16,8 @@ namespace API_Class_FuelManager.Models
         public int AnoFabricacao { get; set; }
         [Required]
         public int AnoModelo { get; set; }
+
+        public ICollection<Consumo> Consumos { get; set; }
 
     }
 }
